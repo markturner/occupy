@@ -2,9 +2,6 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.2'
 
-gem 'sqlite3'
-
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -21,6 +18,10 @@ gem 'json'
 gem 'httparty'
 gem 'htmlentities'
 gem 'sanitize'
+
+group :development do
+  gem 'sqlite3'
+end
 
 group :test do
   # Pretty printed test output
