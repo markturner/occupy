@@ -1,47 +1,54 @@
-%h1= @camp
-= image_tag @camp.image_url if @camp.image_url.present?
-- if @camp.latitude != nil and @camp.longitude != nil
-  = google_map_tag id: "camp_location_map", LatLng: @camp.latitude.to_s + ", " + @camp.longitude.to_s, zoom: 13, mark_center: true, width: 500
-- else
-  = render "map", :camp => @camp.map_address
-
-%p
-  %b== Latest news for #{@camp}:
-
-%ul
-- @camp.news.each do |article|
-  %li= link_to(article[:title], article[:url]).html_safe
-
-= render "twitter", :search_term => "occupy#{@camp.city.downcase}", :camp => @camp, :twitter => @camp.twitter_page
-
-%p
-  %b City:
-  = @camp.city
-%p
-  %b Main location:
-  = @camp.main_location
-%p
-  %b Second location:
-  = @camp.second_location
-%p
-  %b Map address:
-  = @camp.map_address
-%p
-  %b Country:
-  = @camp.country
-%p
-  %b Twitter:
-  - if @camp.twitter.present?
-    = link_to @camp.twitter, "http://www.twitter.com/#{@camp.twitter}"
-  - else
-    Not known
-%p
-  %b Start date:
-  = @camp.start_date
-%p
-  %b Max numbers:
-  = @camp.max_numbers
+%h1{:style => "margin: 20px 0"}= @camp
+.row.section
+  .seven.columns.padded
+    - if @camp.latitude != nil and @camp.longitude != nil
+      = google_map_tag id: "camp_location_map", LatLng: @camp.latitude.to_s + ", " + @camp.longitude.to_s, zoom: 13, mark_center: true, width: 500
+    - else
+      = render "map", :camp => @camp.map_address
     
-/ = link_to 'Edit', edit_camp_path(@camp)
-/ \|
-= link_to 'Back', camps_path
+  .three.columns.padded= render "twitter", :search_term => "occupy#{@camp.city.downcase}", :camp => @camp, :twitter => @camp.twitter_page
+    
+
+.row.section
+  .six.columns.padded= image_tag @camp.image_url if @camp.image_url.present?
+
+  .four.columns.padded
+    %p
+      %b== Latest news for #{@camp}:
+
+    %ul
+    - @camp.news.each do |article|
+      %li= link_to(article[:title], article[:url]).html_safe
+
+.row.section.padded
+  %h3 More Information
+  %p
+    %b City:
+    = @camp.city
+  %p
+    %b Main location:
+    = @camp.main_location
+  %p
+    %b Second location:
+    = @camp.second_location
+  %p
+    %b Map address:
+    = @camp.map_address
+  %p
+    %b Country:
+    = @camp.country
+  %p
+    %b Twitter:
+    - if @camp.twitter.present?
+      = link_to @camp.twitter, "http://www.twitter.com/#{@camp.twitter}"
+    - else
+      Not known
+  %p
+    %b Start date:
+    = @camp.start_date
+  %p
+    %b Max numbers:
+    = @camp.max_numbers
+  
+  / = link_to 'Edit', edit_camp_path(@camp)
+  / \|

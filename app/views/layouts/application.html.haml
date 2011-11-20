@@ -8,11 +8,15 @@
 %body
   .container
     .row
-      .twelve.columns
-        = render 'layouts/flashes'
-        - if params[:action] == "index"
-          .header{:style => "text-align: center;"}
-            = image_tag "/assets/occupy.gif"
-        - else
-          other pages
+      = render 'layouts/flashes'
+      - if params[:action] == "index"
+        .header{:style => "text-align: center;"}
+          = image_tag "/assets/occupy.gif"
         = yield
+      - else
+        .two.columns{:style => "margin-left: 0; text-align: center"}
+          = image_tag "/assets/occupy_small.gif"
+          %p= link_to '<< Back', camps_path, :class => "nice small radius black button"
+        .ten.columns
+          = yield
+
