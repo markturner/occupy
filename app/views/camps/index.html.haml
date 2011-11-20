@@ -4,17 +4,12 @@
   %tr
     %th City
     %th Main location
-    %th Second location
     %th Map address
     %th Country
     %th Start date
     %th Max numbers
     %th More one day
-    %th Numbers source
     %th Image url
-    %th Icon 1
-    %th Icon 2
-    %th Icon 3
     %th
     %th
     %th
@@ -23,17 +18,12 @@
     %tr
       %td= camp.city
       %td= camp.main_location
-      %td= camp.second_location
       %td= camp.map_address
       %td= camp.country
       %td= camp.start_date
       %td= camp.max_numbers
       %td= camp.more_one_day
-      %td= camp.numbers_source
       %td= camp.image_url
-      %td= camp.icon_1
-      %td= camp.icon_2
-      %td= camp.icon_3
       %td= link_to 'Show', camp
       %td= link_to 'Edit', edit_camp_path(camp)
       %td= link_to 'Destroy', camp, :confirm => 'Are you sure?', :method => :delete
