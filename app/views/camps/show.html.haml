@@ -1,7 +1,10 @@
 %h1= @camp
 
-= image_tag @camp.image_url if @camp.image_url
-= render "map", :camp => @camp.map_address
+- if @camp.latitude != nil and @camp.longitude != nil
+  = google_map_tag id: "camp_location_map", LatLng: @camp.latitude.to_s + ", " + @camp.longitude.to_s, zoom: 13, mark_center: true, width: 500
+- else
+  = image_tag @camp.image_url if @camp.image_url
+  = render "map", :camp => @camp.map_address
 
 %p
   %b== Latest news for #{@camp}:
