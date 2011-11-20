@@ -1,5 +1,3 @@
-%p#notice= notice
-
 %h1= @camp
 
 = image_tag @camp.image_url if @camp.image_url
@@ -11,6 +9,8 @@
 %ul
 - @camp.news.each do |article|
   %li= link_to(article[:title], article[:url]).html_safe
+
+= render "twitter", :search_term => "occupy#{@camp.city.downcase}", :camp => @camp, :twitter => @camp.twitter_page
 
 %p
   %b City:
@@ -28,30 +28,15 @@
   %b Country:
   = @camp.country
 %p
+  %b Twitter:
+  = link_to @camp.twitter, "http://www.twitter.com/#{@camp.twitter}"
+%p
   %b Start date:
   = @camp.start_date
 %p
   %b Max numbers:
   = @camp.max_numbers
-%p
-  %b More one day:
-  = @camp.more_one_day
-%p
-  %b Numbers source:
-  = @camp.numbers_source
-%p
-  %b Image url:
-  = @camp.image_url
-%p
-  %b Icon 1:
-  = @camp.icon_1
-%p
-  %b Icon 2:
-  = @camp.icon_2
-%p
-  %b Icon 3:
-  = @camp.icon_3
-
-= link_to 'Edit', edit_camp_path(@camp)
-\|
+    
+/ = link_to 'Edit', edit_camp_path(@camp)
+/ \|
 = link_to 'Back', camps_path
