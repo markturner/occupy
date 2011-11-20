@@ -1,33 +1,40 @@
-%h1 Listing camps
+%h1 Find a camp
 
-%table
-  %tr
-    %th City
-    %th Main location
-    %th Second location
-    %th Map address
-    %th Country
-    %th Start date
-    %th Max numbers
-    %th Image
-    %th
-    %th
-    %th
+= form_for "camp", :method => :post do |f|
+  = f.text_field "location"
+  = f.submit 'Find'
 
-  - @camps.each do |camp|
-    %tr
-      %td= camp.city
-      %td= camp.main_location
-      %td= camp.second_location
-      %td= camp.map_address
-      %td= camp.country
-      %td= camp.start_date
-      %td= camp.max_numbers
-      %td= camp.image_url
-      %td= link_to 'Show', camp
-      %td= link_to 'Edit', edit_camp_path(camp)
-      %td= link_to 'Destroy', camp, :confirm => 'Are you sure?', :method => :delete
 
-%br
-
-= link_to 'New Camp', new_camp_path
+/ %h1 Listing camps
+/ 
+/ %table
+/   %tr
+/     %th City
+/     %th Main location
+/     %th Second location
+/     %th Map address
+/     %th Country
+/     %th Start date
+/     %th Max numbers
+/     %th Image
+/     %th
+/     %th
+/     %th
+/ 
+/   - @camps.each do |camp|
+/     %tr
+/       %td= camp.city
+/       %td= camp.main_location
+/       %td= camp.second_location
+/       %td= camp.map_address
+/       %td= camp.country
+/       %td= camp.start_date
+/       %td= camp.max_numbers
+/       %td= camp.image_url
+/       %td= link_to 'Show', camp
+/       %td= link_to 'Edit', edit_camp_path(camp)
+/       %td= link_to 'Destroy', camp, :confirm => 'Are you sure?', :method => :delete
+/ 
+/ %br
+/ 
+/ = link_to 'New Camp', new_camp_path
