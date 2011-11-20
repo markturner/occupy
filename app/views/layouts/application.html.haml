@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    %title Occupy
+    = stylesheet_link_tag    "application" 
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+%body
+  .container
+    .row
+      .twelve.columns
+        %h1
+          Occupy Somewhere
+
+        %p
+          Find your nearest occupy camp. Why not occupy somewhere yourself</p>
+          
+          = render 'layouts/flashes'
+          = yield
