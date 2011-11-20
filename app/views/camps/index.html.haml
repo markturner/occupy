@@ -1,9 +1,13 @@
-%h1 Find a camp
+.eight.columns.centered
 
-= form_for "camp", :method => :post do |f|
-  = f.text_field "location"
-  = f.submit 'Find'
+  %h2 Find a camp
+  
+  = form_for "camp", :method => :post do |f|
+    = f.text_field "location", :class => "oversize input-text"
+    = f.submit 'Find', :class => "nice large radius blue button"
 
+  %p
+    Some text written by people who can write and explain stuff
 
 / %h1 Listing camps
 / 
