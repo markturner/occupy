@@ -2,7 +2,8 @@ class CampsController < ApplicationController
 
   def index
     if params[:camp]
-      camp = Camp.near(params[:camp][:location], 50).first
+      camp = Camp.near(params[:camp][:location], 20).first
+      camp ||= Camp.find_by_city(params[:camp][:location].capitalize)
       if camp
         redirect_to camp_url(camp)
       else
