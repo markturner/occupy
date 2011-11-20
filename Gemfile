@@ -16,6 +16,7 @@ end
 gem 'jquery-rails'
 gem 'zurb-foundation'
 gem 'haml-rails'
+gem 'geocoder'
 
 group :test do
   # Pretty printed test output
