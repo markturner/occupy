@@ -1,8 +1,44 @@
 %p#notice= notice
 
 %p
-  %b Location:
-  = @camp.location
+  %b City:
+  = @camp.city
+%p
+  %b Main location:
+  = @camp.main_location
+%p
+  %b Second location:
+  = @camp.second_location
+%p
+  %b Map address:
+  = @camp.map_address
+%p
+  %b Country:
+  = @camp.country
+%p
+  %b Start date:
+  = @camp.start_date
+%p
+  %b Max numbers:
+  = @camp.max_numbers
+%p
+  %b More one day:
+  = @camp.more_one_day
+%p
+  %b Numbers source:
+  = @camp.numbers_source
+%p
+  %b Image url:
+  = @camp.image_url
+%p
+  %b Icon 1:
+  = @camp.icon_1
+%p
+  %b Icon 2:
+  = @camp.icon_2
+%p
+  %b Icon 3:
+  = @camp.icon_3
 
 = link_to 'Edit', edit_camp_path(@camp)
 \|

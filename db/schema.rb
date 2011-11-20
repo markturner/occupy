@@ -11,10 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111120124213) do
+ActiveRecord::Schema.define(:version => 20111120132838) do
 
   create_table "camps", :force => true do |t|
-    t.string   "location"
+    t.string   "city"
+    t.string   "main_location"
+    t.string   "second_location"
+    t.string   "map_address"
+    t.string   "country"
+    t.string   "start_date"
+    t.string   "max_numbers"
+    t.string   "more_one_day"
+    t.string   "numbers_source"
+    t.string   "image_url"
+    t.string   "icon_1"
+    t.string   "icon_2"
+    t.string   "icon_3"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

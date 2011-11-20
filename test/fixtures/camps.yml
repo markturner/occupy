@@ -1,7 +1,31 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  location: MyString
+  city: MyString
+  main_location: MyString
+  second_location: MyString
+  map_address: MyString
+  country: MyString
+  start_date: MyString
+  max_numbers: MyString
+  more_one_day: MyString
+  numbers_source: MyString
+  image_url: MyString
+  icon_1: MyString
+  icon_2: MyString
+  icon_3: MyString
 
 two:
-  location: MyString
+  city: MyString
+  main_location: MyString
+  second_location: MyString
+  map_address: MyString
+  country: MyString
+  start_date: MyString
+  max_numbers: MyString
+  more_one_day: MyString
+  numbers_source: MyString
+  image_url: MyString
+  icon_1: MyString
+  icon_2: MyString
+  icon_3: MyString
