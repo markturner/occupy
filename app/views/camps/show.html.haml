@@ -2,6 +2,7 @@
 
 %h1= @camp
 
+= image_tag @camp.image_url if @camp.image_url
 = render "map", :camp => @camp.map_address
 
 %p
@@ -32,25 +33,7 @@
 %p
   %b Max numbers:
   = @camp.max_numbers
-%p
-  %b More one day:
-  = @camp.more_one_day
-%p
-  %b Numbers source:
-  = @camp.numbers_source
-%p
-  %b Image url:
-  = @camp.image_url
-%p
-  %b Icon 1:
-  = @camp.icon_1
-%p
-  %b Icon 2:
-  = @camp.icon_2
-%p
-  %b Icon 3:
-  = @camp.icon_3
-
+  
 = link_to 'Edit', edit_camp_path(@camp)
 \|
 = link_to 'Back', camps_path
