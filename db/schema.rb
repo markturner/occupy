@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111120132838) do
+ActiveRecord::Schema.define(:version => 20111120162614) do
 
   create_table "camps", :force => true do |t|
     t.string   "city"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20111120132838) do
     t.string   "icon_3"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "twitter"
   end
 
 end

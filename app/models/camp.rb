@@ -24,4 +24,24 @@ class Camp < ActiveRecord::Base
       { :title => HTMLEntities.new.decode(Sanitize.clean(news['title'])), :url => news['unescapedUrl'] }
     end
   end
+  
+  def twitter_page
+    if twitter.present?
+      twitter
+    else
+      "occupy#{city}"
+    end
+  end
+  
+  # def twitter_page
+  #   if twitter.present?
+  #     "http://www.twitter.com/#{twitter}"
+  #   else
+  #     require 'httparty'
+  #     require 'htmlentities'
+  #   
+  #     json = HTTParty.get "http://www.google.co.uk/search?q=occupy+#{city}+twitter", {:no_follow => true}
+  #     # get the url somehow?
+  #   end
+  # end
 end

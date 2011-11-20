@@ -12,6 +12,8 @@
 - @camp.news.each do |article|
   %li= link_to(article[:title], article[:url]).html_safe
 
+= render "twitter", :search_term => "occupy#{@camp.city.downcase}", :camp => @camp, :twitter => @camp.twitter_page
+
 %p
   %b City:
   = @camp.city
@@ -28,12 +30,15 @@
   %b Country:
   = @camp.country
 %p
+  %b Twitter:
+  = link_to @camp.twitter, "http://www.twitter.com/#{@camp.twitter}"
+%p
   %b Start date:
   = @camp.start_date
 %p
   %b Max numbers:
   = @camp.max_numbers
   
-= link_to 'Edit', edit_camp_path(@camp)
-\|
+/ = link_to 'Edit', edit_camp_path(@camp)
+/ \|
 = link_to 'Back', camps_path
