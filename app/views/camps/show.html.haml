@@ -29,7 +29,10 @@
   = @camp.country
 %p
   %b Twitter:
-  = link_to @camp.twitter, "http://www.twitter.com/#{@camp.twitter}"
+  - if @camp.twitter.present?
+    = link_to @camp.twitter, "http://www.twitter.com/#{@camp.twitter}"
+  - else
+    Not known
 %p
   %b Start date:
   = @camp.start_date
