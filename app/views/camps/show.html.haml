@@ -1,5 +1,16 @@
 %p#notice= notice
 
+%h1= @camp
+
+= render "map", :camp => @camp.map_address
+
+%p
+  %b== Latest news for #{@camp}:
+
+%ul
+- @camp.news.each do |article|
+  %li= link_to(article[:title], article[:url]).html_safe
+
 %p
   %b City:
   = @camp.city
