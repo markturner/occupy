@@ -9,7 +9,9 @@
   .container
     .row
       .twelve.columns
-
-          
         = render 'layouts/flashes'
+        - if params[:action] == "index"
+          homepage stuff
+        - else
+          other pages
         = yield
