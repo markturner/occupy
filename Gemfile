@@ -16,13 +16,16 @@ end
 gem 'jquery-rails'
 gem 'zurb-foundation'
 gem 'haml-rails'
+<<<<<<< HEAD
 gem 'geocoder'
+=======
+gem 'json'
+gem 'httparty'
+gem 'htmlentities'
+gem 'sanitize'
+>>>>>>> 689626ae4d147681cd7419842719cce85d5f67cd
 
 group :test do
   # Pretty printed test output
   gem 'turn', '0.8.2', :require => false
-end
-
-group :production do
-  
 end

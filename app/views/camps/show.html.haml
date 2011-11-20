@@ -1,5 +1,17 @@
 %p#notice= notice
 
+%h1= @camp
+
+= image_tag @camp.image_url if @camp.image_url
+= render "map", :camp => @camp.map_address
+
+%p
+  %b== Latest news for #{@camp}:
+
+%ul
+- @camp.news.each do |article|
+  %li= link_to(article[:title], article[:url]).html_safe
+
 %p
   %b City:
   = @camp.city
@@ -39,9 +51,6 @@
 %p
   %b Icon 3:
   = @camp.icon_3
-%p
-  %b Latitude:
-  = @camp.latitude
 
 = link_to 'Edit', edit_camp_path(@camp)
 \|
