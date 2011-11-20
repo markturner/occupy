@@ -1,0 +1,13 @@
+= form_for @camp do |f|
+  -if @camp.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@camp.errors.count, "error")} prohibited this camp from being saved:"
+      %ul
+        - @camp.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :location
+    = f.text_field :location
+  .actions
+    = f.submit 'Save'
