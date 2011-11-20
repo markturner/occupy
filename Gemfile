@@ -16,6 +16,7 @@ end
 gem 'jquery-rails'
 gem 'zurb-foundation'
 gem 'haml-rails'
+gem 'geocoder'
 gem 'json'
 gem 'httparty'
 gem 'htmlentities'

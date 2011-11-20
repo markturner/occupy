@@ -1,3 +1,5 @@
+rake geocode:all CLASS=Camp < run this task to add Latitude and Longitude to Camps - does not work for all
+
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create

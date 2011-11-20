@@ -1,4 +1,6 @@
 class Camp < ActiveRecord::Base
+  geocoded_by :map_address
+  after_validation :geocode
   
   def to_s
     "Occupy #{city}"

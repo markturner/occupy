@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(:version => 20111120162614) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "twitter"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
 end
