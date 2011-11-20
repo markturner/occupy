@@ -1,5 +1,5 @@
-class Camp < ActiveRecord::Base
-  
+class Camp < ActiveRecord::Base 
+
   def import_csv
     require 'csv'
 
