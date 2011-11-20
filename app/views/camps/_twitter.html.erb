@@ -4,14 +4,14 @@ new TWTR.Widget({
   version: 2,
   type: 'search',
   search: '\"<%= twitter %>\" OR \"<%= search_term %>\" OR from:<%= twitter %>',
-  interval: 30000,
+  interval: 300,
   title: '<%= camp %>',
   subject: 'Tweets about <%= camp %>',
   width: 250,
   height: 300,
   theme: {
     shell: {
-      background: '#8ec1da',
+      background: '#111111',
       color: '#ffffff'
     },
     tweets: {
@@ -21,9 +21,9 @@ new TWTR.Widget({
     }
   },
   features: {
-    scrollbar: false,
+    scrollbar: true,
     loop: true,
-    live: true,
+    live: false,
     behavior: 'default'
   }
 }).render().start();
