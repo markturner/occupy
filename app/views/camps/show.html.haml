@@ -10,7 +10,11 @@
     
 
 .row.section
-  .six.columns.padded= image_tag @camp.image_url if @camp.image_url.present?
+  .six.columns.padded
+    - if @camp.image_url.present?
+      = image_tag @camp.image_url
+    - else
+      %p No image!
 
   .four.columns.padded
     %p

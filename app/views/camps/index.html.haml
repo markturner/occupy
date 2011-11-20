@@ -2,9 +2,10 @@
   
   = form_for "camp", :method => :post do |f|
     = f.text_field "location", :class => "input-text", :style => "font-size: 4em; text-align: center; width: 100%;", :placeholder => "Location"
-    = f.submit 'Find', :class => "nice large radius blue button"
+    = f.submit 'Find', :class => "nice large radius black button"
     
   %p Find your nearest Occupy camp by typing a location in the box above.
+  %p Example queries: "New York", "London", "Birmingham, UK", "CF10 1EQ"
   %p If you don't find the place you're looking for, try a more specific query.
 
 / %h1 Listing camps
