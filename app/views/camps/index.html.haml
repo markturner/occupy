@@ -1,15 +1,11 @@
-.six.columns.centered
-  
-  =image_tag "/assets/occupy.gif"
-
-  %h2 Find a camp
+.eight.columns.centered{:style => "text-align: center"}
   
   = form_for "camp", :method => :post do |f|
-    = f.text_field "location", :class => "oversize input-text"
+    = f.text_field "location", :class => "input-text", :style => "font-size: 4em; text-align: center; width: 100%;", :placeholder => "Location"
     = f.submit 'Find', :class => "nice large radius blue button"
-
-  %p
-    Some text written by people who can write and explain stuff
+    
+  %p Find your nearest Occupy camp by typing a location in the box above.
+  %p If you don't find the place you're looking for, try a more specific query.
 
 / %h1 Listing camps
 / 

@@ -11,7 +11,8 @@
       .twelve.columns
         = render 'layouts/flashes'
         - if params[:action] == "index"
-          homepage stuff
+          .header{:style => "text-align: center;"}
+            = image_tag "/assets/occupy.gif"
         - else
           other pages
         = yield
